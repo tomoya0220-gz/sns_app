@@ -5,7 +5,7 @@ Rails.application.configure do
 
   # cloud9 host
   # すべてのホストを許可していますが、この設定はCloud9上で開発する場合のみ有効にしてください
-  # config.hosts.clear
+  config.hosts.clear
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
@@ -71,4 +71,7 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+config.action_mailer.default_url_options = { host: 'localhost', port: 8081 }
+
 end
