@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <title>SNS App</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-     <link rel="stylesheet" href="<%= mix('/css/app.css') %>">
-     <script src="<%= mix('/js/bootstrap.js') %>"></script>
-  </head>
+<head>
+  <!-- title -->
+  <title>SNS App</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <!-- Style -->
+  <link rel="stylesheet" href="<%= mix('/css/app.css') %>">
+  <!-- Javascript -->
+  <script src="<%= mix('/js/bootstrap.js') %>"></script>
+  <!-- turbo.jsを追加します -->
+  <script src="<%= mix('/js/turbo.js') %>"></script>
+</head>
+
+<body>
   <div class="main-container">
-      <nav class="custom-navbar">
-        <div id="menuToggle">
-          <input type="checkbox" />
-          <span></span>
-          <span></span>
-          <span></span>
-          <ul id="menu">
+    <!--  ナビゲーションバー -->
+    <nav class="custom-navbar">
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <!-- ここから追加-->
           <% if user_signed_in? %>
             <!-- ログインしている場合に表示されます -->
             <!-- user_signed_in? は device が提供している認証済みかを判定するメソッドです -->
@@ -38,35 +47,28 @@
               <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
             </li>
           <% end %>
-            <li>
-              <a href="#">投稿一覧</a>
-            </li>
-            <li>
-              <a href="#">新規投稿</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <% if notice %>
-        <div class="alert alert-success" role="alert">
-          <%= notice %>
-        </div>
-      <% end %>
-      <% if alert %>
-        <div class="alert alert-danger" role="alert">
-          <%= alert %>
-        </div>
-      <% end %>
-
-      <div class="bg-white text-dark">
-        <%= yield %>
+          <!-- ここまで-->
+        </ul>
       </div>
+    </nav>
+
+    <!-- アラートメッセージ -->
+    <% if notice %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-danger" role="alert">
+        <%= alert %>
+      </div>
+    <% end %>
+
+    <div class="bg-white text-dark">
+      <%= yield %>
     </div>
-
-    <script src="<%= mix('/js/app.js') %>"></script>
-
-  <body>
-  
-  </body>
+  </div>
+  <!-- Javascript -->
+  <script src="<%= mix('/js/app.js') %>"></script>
+</body>
 </html>

@@ -1,8 +1,10 @@
+<div>
+  <h1>投稿画面</h1>
 <div class="container">
   <div class="row">
     <div class="col-md-8 mx-auto post-form-container">
       <h2 class="h2">新規投稿</h2>
-      <%= form_with(url: create_post_path, local: true, method: :post, html: { class: 'post-form' } ) do |f| %>
+      <%= form_with(url: create_posts_path, local: true, method: :posts, html: { class: 'posts-form' } ) do |f| %>
 
         <div class="form-group">
           <%= f.label "タイトル", class: 'form-label' %>
@@ -24,9 +26,10 @@
         </div>
 
         <div class="button-group">
-          <%= f.submit '投稿する', class: 'btn btn-primary' %>
+          <%= f.submit '投稿', class: 'btn btn-primary' %>
         </div>
       <% end %>
     </div>
   </div>
+</div>
 </div>
