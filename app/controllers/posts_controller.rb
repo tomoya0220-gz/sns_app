@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
   
   def create
-    redirect_to 'posts/index'
+    redirect_to new_posts_path # redirects to GET "/posts/new"
   end
   
 end
