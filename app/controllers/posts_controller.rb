@@ -10,6 +10,14 @@ class PostsController < ApplicationController
   if params[:post][:image]
       @post.image.attach(params[:post][:image])
   end
+  
+  def new
+    render :new # renders app/views/posts/new.html.erb
+  end
+
+  def create
+    redirect_to new_post_path # redirects to GET "/posts/new"
+  end
 
   if @post.save
       redirect_to index_post_path, notice: '登録しました'

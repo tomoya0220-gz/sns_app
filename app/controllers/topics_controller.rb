@@ -4,7 +4,6 @@ class TopicsController < ApplicationController
   end
 
   def create
-    redirect_to 'new_posts_path'
     redirect_to 'posts/index'
   end
 
