@@ -12,6 +12,6 @@ class TopicsController < ApplicationController
   end
 
   def update
-    redirect_to 'topics/edit'
+    redirect_to edit_topics_path
   end
 end 
