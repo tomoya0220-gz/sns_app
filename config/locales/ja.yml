@@ -3,12 +3,14 @@ ja:
     models:
       user: 'ユーザー'
       post: '投稿'
+      topic: '投稿'
     attributes:
       user:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認用'
       post:
+      topic: '投稿'
         title: 'タイトル'
         content: '内容'
         image: '画像'

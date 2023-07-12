@@ -8,9 +8,8 @@ Rails.application.routes.draw do
 # PostsController
  get 'posts/new', to:'posts#new', as:'new_posts'
  get '/', to: 'posts#index', as: 'index_posts'
- post 'posts/new', to: 'posts#create', as: 'create_posts_path'
+ post 'posts/new', to: 'posts#create', as: 'create_posts'
  get 'posts/index', to: 'posts#index', as: 'index_Action'
-
  
 #TopicsController
  get 'topics/new', to:'topics#new', as:'new_topics'
