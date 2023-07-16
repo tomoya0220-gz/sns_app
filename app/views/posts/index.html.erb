@@ -9,7 +9,8 @@
 
   <div class="post-list">
     <% @posts.each do |post| %>
-      <div class="post">
+    <!-- 以下の行をdivタグからaタグに変更する -->
+      <a class="post" href="<%= edit_posts_path(post) %>">
         <div class="header">
           <h2 class="title"><%= post.title %></h2>
           <p class="timestamp"><%= post.created_at.strftime("%B %d, %Y") %></p>
@@ -20,7 +21,8 @@
         <div class="image">
           <%= image_tag(post.image) if post.image.attached? %>
         </div>
-      </div>
-    <% end %>
+      <!-- 以下の行をdivタグからaタグに変更する -->
+      </a>
+  <% end %>
   </div>
 </div>

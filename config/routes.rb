@@ -10,6 +10,9 @@ Rails.application.routes.draw do
  get '/', to: 'posts#index', as: 'index_posts'
  post 'posts/new', to: 'posts#create', as: 'create_posts'
  get 'posts/index', to: 'posts#index', as: 'index_Action'
+ get 'posts/edit/:id', to: 'posts#edit', as: 'edit_posts'
+ post 'posts/edit/:id', to: 'posts#update', as: 'update_posts'
+ delete 'posts/destroy/:id', to: 'posts#destroy', as: 'destroy_posts'
  
 #TopicsController
  get 'topics/new', to: 'topics#new', as: 'new_topics'
