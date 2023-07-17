@@ -16,10 +16,10 @@ Rails.application.routes.draw do
  
 #TopicsController
  get 'topics/new', to: 'topics#new', as: 'new_topics'
- get 'topics/edit/:id', to: 'topics#edit', as: 'edit_topics' 
- post 'topics/new', to:  "value"'topics#create', as: 'create_topics'
- post 'topics/edit', to: 'topics#update', as: 'update_topics'
+ post 'topics/new', to:  'topics#create', as: 'create_topics'
+ get 'topics/edit/:id', to: 'topics#edit', as: 'edit_topics'
+ post 'topics/edit/:id', to: 'topics#update', as: 'update_topics'
  get 'topics/index', to: 'topics#index', as: 'index_topics'
-
+ delete 'topics/destroy/:id', to: 'topics#destroy', as: 'destroy_topics'
 
 end

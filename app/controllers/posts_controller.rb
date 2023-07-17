@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to index_post_path, notice: '削除しました'
+    redirect_to index_posts_path, notice: '削除しました'
   end
   
   def index
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
       @post.image.attach(params[:post][:image])
     end
     if @post.update(post_params)
-      redirect_to index_post_path, notice: '更新しました'
+      redirect_to index_posts_path, notice: '更新しました'
     else
       render :edit, status: :unprocessable_entity
     end
