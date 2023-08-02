@@ -34,8 +34,9 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
-    render :topic
+    render :edit
   end
+
 
   def update
     @topic = Topic.find(params[:id])
@@ -54,11 +55,5 @@ class TopicsController < ApplicationController
     params.require(:topic).permit(:title)
   end
   
-  def edit
-    render :edit
-  end
   
-  def update
-    redirect_to edit_topics_path
-  end
 end

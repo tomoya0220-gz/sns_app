@@ -13,6 +13,8 @@ Rails.application.routes.draw do
  get 'posts/edit/:id', to: 'posts#edit', as: 'edit_posts'
  post 'posts/edit/:id', to: 'posts#update', as: 'update_posts'
  delete 'posts/destroy/:id', to: 'posts#destroy', as: 'destroy_posts'
+ get 'posts/show/:post_id/comments/new', to: 'comments#new', as: 'new_comment'
+ post 'posts/show/:post_id/comments/new', to: 'comments#create', as: 'create_comment'
  
 #TopicsController
  get 'topics/new', to: 'topics#new', as: 'new_topics'
